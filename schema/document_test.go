@@ -76,7 +76,7 @@ var GOOD_XML string = `
 // TestHelloEmpty calls greetings.Hello with an empty string,
 // checking for an error.
 func TestDocumentGood(t *testing.T) {
-	doc := &schema.P1Document{}
+	doc := &schema.Pain001Document{}
 
 	err := xml.Unmarshal([]byte(GOOD_XML), doc)
 	if err != nil {
@@ -85,7 +85,7 @@ func TestDocumentGood(t *testing.T) {
 }
 
 func TestDocumentNotXml(t *testing.T) {
-	doc := &schema.P1Document{}
+	doc := &schema.Pain001Document{}
 
 	err := xml.Unmarshal([]byte("not xml"), doc)
 	if err == nil {
@@ -94,7 +94,7 @@ func TestDocumentNotXml(t *testing.T) {
 }
 
 func TestDocumentHasMsgId(t *testing.T) {
-	doc := &schema.P1Document{}
+	doc := &schema.Pain001Document{}
 
 	err := xml.Unmarshal([]byte(GOOD_XML), doc)
 	if err != nil {
