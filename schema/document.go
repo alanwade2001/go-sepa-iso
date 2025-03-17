@@ -21,16 +21,20 @@ type Pacs008Document struct {
 	FIToFICstmrCdtTrf pacs_008_001_02.FIToFICustomerCreditTransferV02 `xml:"FIToFICstmrCdtTrf"`
 }
 
+//go:embed pain.001.001.03.xsd
+var p1Bytes []byte
+
 func NewPain001XsdHandler() (*xsdvalidate.XsdHandler, error) {
-	//go:embed pain.001.001.03.xsd
-	var xsdBytes []byte
-	return xsdvalidate.NewXsdHandlerMem(xsdBytes, xsdvalidate.ParsErrVerbose)
+
+	return xsdvalidate.NewXsdHandlerMem(p1Bytes, xsdvalidate.ParsErrVerbose)
 
 }
 
+//go:embed pacs.008.001.02.xsd
+var p8Bytes []byte
+
 func NewPacs008XsdHandler() (*xsdvalidate.XsdHandler, error) {
-	//go:embed pacs.008.001.02.xsd
-	var xsdBytes []byte
-	return xsdvalidate.NewXsdHandlerMem(xsdBytes, xsdvalidate.ParsErrVerbose)
+
+	return xsdvalidate.NewXsdHandlerMem(p8Bytes, xsdvalidate.ParsErrVerbose)
 
 }
