@@ -1,6 +1,7 @@
 package schema
 
 import (
+	_ "embed"
 	"encoding/xml"
 
 	"github.com/alanwade2001/go-sepa-iso/pacs_008_001_02"
@@ -21,11 +22,15 @@ type Pacs008Document struct {
 }
 
 func NewPain001XsdHandler() (*xsdvalidate.XsdHandler, error) {
-	return xsdvalidate.NewXsdHandlerUrl("../xsd/pain.001.001.03.xsd", xsdvalidate.ParsErrVerbose)
+	//go:embed pain.001.001.03.xsd
+	var xsdBytes []byte
+	return xsdvalidate.NewXsdHandlerMem(xsdBytes, xsdvalidate.ParsErrVerbose)
 
 }
 
 func NewPacs008XsdHandler() (*xsdvalidate.XsdHandler, error) {
-	return xsdvalidate.NewXsdHandlerUrl("../xsd/pacs.008.001.02.xsd", xsdvalidate.ParsErrVerbose)
+	//go:embed pacs.008.001.02.xsd
+	var xsdBytes []byte
+	return xsdvalidate.NewXsdHandlerMem(xsdBytes, xsdvalidate.ParsErrVerbose)
 
 }
