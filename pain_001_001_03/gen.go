@@ -5,14 +5,14 @@ type Document *Document
 
 // AccountIdentification4Choice ...
 type AccountIdentification4Choice struct {
-	IBAN string                         `xml:"IBAN,omitempty"`
-	Othr *GenericAccountIdentification1 `xml:"Othr,omitempty"`
+	IBAN string                         `xml:"IBAN"`
+	Othr *GenericAccountIdentification1 `xml:"Othr"`
 }
 
 // AccountSchemeName1Choice ...
 type AccountSchemeName1Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // ActiveOrHistoricCurrencyAndAmountSimpleType ...
@@ -20,8 +20,8 @@ type ActiveOrHistoricCurrencyAndAmountSimpleType float64
 
 // ActiveOrHistoricCurrencyAndAmount ...
 type ActiveOrHistoricCurrencyAndAmount struct {
-	CcyAttr string  `xml:"Ccy,attr,omitempty"`
-	Value   float64 `xml:",chardata,omitempty"`
+	CcyAttr string  `xml:"Ccy,attr"`
+	Value   float64 `xml:",chardata"`
 }
 
 // ActiveOrHistoricCurrencyCode ...
@@ -32,8 +32,8 @@ type AddressType2Code string
 
 // AmountType3Choice ...
 type AmountType3Choice struct {
-	InstdAmt *ActiveOrHistoricCurrencyAndAmount `xml:"InstdAmt,omitempty"`
-	EqvtAmt  *EquivalentAmount2                 `xml:"EqvtAmt,omitempty"`
+	InstdAmt *ActiveOrHistoricCurrencyAndAmount `xml:"InstdAmt"`
+	EqvtAmt  *EquivalentAmount2                 `xml:"EqvtAmt"`
 }
 
 // AnyBICIdentifier ...
@@ -41,8 +41,8 @@ type AnyBICIdentifier string
 
 // Authorisation1Choice ...
 type Authorisation1Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // Authorisation1Code ...
@@ -59,29 +59,29 @@ type BatchBookingIndicator bool
 
 // BranchAndFinancialInstitutionIdentification4 ...
 type BranchAndFinancialInstitutionIdentification4 struct {
-	FinInstnId *FinancialInstitutionIdentification7 `xml:"FinInstnId,omitempty"`
-	BrnchId    *BranchData2                         `xml:"BrnchId,omitempty"`
+	FinInstnId *FinancialInstitutionIdentification7 `xml:"FinInstnId"`
+	BrnchId    *BranchData2                         `xml:"BrnchId"`
 }
 
 // BranchData2 ...
 type BranchData2 struct {
-	Id      string          `xml:"Id,omitempty"`
-	Nm      string          `xml:"Nm,omitempty"`
-	PstlAdr *PostalAddress6 `xml:"PstlAdr,omitempty"`
+	Id      string          `xml:"Id"`
+	Nm      string          `xml:"Nm"`
+	PstlAdr *PostalAddress6 `xml:"PstlAdr"`
 }
 
 // CashAccount16 ...
 type CashAccount16 struct {
-	Id  *AccountIdentification4Choice `xml:"Id,omitempty"`
-	Tp  *CashAccountType2             `xml:"Tp,omitempty"`
-	Ccy string                        `xml:"Ccy,omitempty"`
-	Nm  string                        `xml:"Nm,omitempty"`
+	Id  *AccountIdentification4Choice `xml:"Id"`
+	Tp  *CashAccountType2             `xml:"Tp"`
+	Ccy string                        `xml:"Ccy"`
+	Nm  string                        `xml:"Nm"`
 }
 
 // CashAccountType2 ...
 type CashAccountType2 struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // CashAccountType4Code ...
@@ -89,8 +89,8 @@ type CashAccountType4Code string
 
 // CategoryPurpose1Choice ...
 type CategoryPurpose1Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // ChargeBearerType1Code ...
@@ -98,17 +98,17 @@ type ChargeBearerType1Code string
 
 // Cheque6 ...
 type Cheque6 struct {
-	ChqTp       string                       `xml:"ChqTp,omitempty"`
-	ChqNb       string                       `xml:"ChqNb,omitempty"`
-	ChqFr       *NameAndAddress10            `xml:"ChqFr,omitempty"`
-	DlvryMtd    *ChequeDeliveryMethod1Choice `xml:"DlvryMtd,omitempty"`
-	DlvrTo      *NameAndAddress10            `xml:"DlvrTo,omitempty"`
-	InstrPrty   string                       `xml:"InstrPrty,omitempty"`
-	ChqMtrtyDt  string                       `xml:"ChqMtrtyDt,omitempty"`
-	FrmsCd      string                       `xml:"FrmsCd,omitempty"`
-	MemoFld     []string                     `xml:"MemoFld,omitempty"`
-	RgnlClrZone string                       `xml:"RgnlClrZone,omitempty"`
-	PrtLctn     string                       `xml:"PrtLctn,omitempty"`
+	ChqTp       string                       `xml:"ChqTp"`
+	ChqNb       string                       `xml:"ChqNb"`
+	ChqFr       *NameAndAddress10            `xml:"ChqFr"`
+	DlvryMtd    *ChequeDeliveryMethod1Choice `xml:"DlvryMtd"`
+	DlvrTo      *NameAndAddress10            `xml:"DlvrTo"`
+	InstrPrty   string                       `xml:"InstrPrty"`
+	ChqMtrtyDt  string                       `xml:"ChqMtrtyDt"`
+	FrmsCd      string                       `xml:"FrmsCd"`
+	MemoFld     []string                     `xml:"MemoFld"`
+	RgnlClrZone string                       `xml:"RgnlClrZone"`
+	PrtLctn     string                       `xml:"PrtLctn"`
 }
 
 // ChequeDelivery1Code ...
@@ -116,8 +116,8 @@ type ChequeDelivery1Code string
 
 // ChequeDeliveryMethod1Choice ...
 type ChequeDeliveryMethod1Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // ChequeType2Code ...
@@ -125,25 +125,25 @@ type ChequeType2Code string
 
 // ClearingSystemIdentification2Choice ...
 type ClearingSystemIdentification2Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // ClearingSystemMemberIdentification2 ...
 type ClearingSystemMemberIdentification2 struct {
-	ClrSysId *ClearingSystemIdentification2Choice `xml:"ClrSysId,omitempty"`
-	MmbId    string                               `xml:"MmbId,omitempty"`
+	ClrSysId *ClearingSystemIdentification2Choice `xml:"ClrSysId"`
+	MmbId    string                               `xml:"MmbId"`
 }
 
 // ContactDetails2 ...
 type ContactDetails2 struct {
-	NmPrfx   string `xml:"NmPrfx,omitempty"`
-	Nm       string `xml:"Nm,omitempty"`
-	PhneNb   string `xml:"PhneNb,omitempty"`
-	MobNb    string `xml:"MobNb,omitempty"`
-	FaxNb    string `xml:"FaxNb,omitempty"`
-	EmailAdr string `xml:"EmailAdr,omitempty"`
-	Othr     string `xml:"Othr,omitempty"`
+	NmPrfx   string `xml:"NmPrfx"`
+	Nm       string `xml:"Nm"`
+	PhneNb   string `xml:"PhneNb"`
+	MobNb    string `xml:"MobNb"`
+	FaxNb    string `xml:"FaxNb"`
+	EmailAdr string `xml:"EmailAdr"`
+	Othr     string `xml:"Othr"`
 }
 
 // CountryCode ...
@@ -154,69 +154,69 @@ type CreditDebitCode string
 
 // CreditTransferTransactionInformation10 ...
 type CreditTransferTransactionInformation10 struct {
-	PmtId           *PaymentIdentification1                       `xml:"PmtId,omitempty"`
-	PmtTpInf        *PaymentTypeInformation19                     `xml:"PmtTpInf,omitempty"`
-	Amt             *AmountType3Choice                            `xml:"Amt,omitempty"`
-	XchgRateInf     *ExchangeRateInformation1                     `xml:"XchgRateInf,omitempty"`
-	ChrgBr          string                                        `xml:"ChrgBr,omitempty"`
-	ChqInstr        *Cheque6                                      `xml:"ChqInstr,omitempty"`
-	UltmtDbtr       *PartyIdentification32                        `xml:"UltmtDbtr,omitempty"`
-	IntrmyAgt1      *BranchAndFinancialInstitutionIdentification4 `xml:"IntrmyAgt1,omitempty"`
-	IntrmyAgt1Acct  *CashAccount16                                `xml:"IntrmyAgt1Acct,omitempty"`
-	IntrmyAgt2      *BranchAndFinancialInstitutionIdentification4 `xml:"IntrmyAgt2,omitempty"`
-	IntrmyAgt2Acct  *CashAccount16                                `xml:"IntrmyAgt2Acct,omitempty"`
-	IntrmyAgt3      *BranchAndFinancialInstitutionIdentification4 `xml:"IntrmyAgt3,omitempty"`
-	IntrmyAgt3Acct  *CashAccount16                                `xml:"IntrmyAgt3Acct,omitempty"`
-	CdtrAgt         *BranchAndFinancialInstitutionIdentification4 `xml:"CdtrAgt,omitempty"`
-	CdtrAgtAcct     *CashAccount16                                `xml:"CdtrAgtAcct,omitempty"`
-	Cdtr            *PartyIdentification32                        `xml:"Cdtr,omitempty"`
-	CdtrAcct        *CashAccount16                                `xml:"CdtrAcct,omitempty"`
-	UltmtCdtr       *PartyIdentification32                        `xml:"UltmtCdtr,omitempty"`
-	InstrForCdtrAgt []*InstructionForCreditorAgent1               `xml:"InstrForCdtrAgt,omitempty"`
-	InstrForDbtrAgt string                                        `xml:"InstrForDbtrAgt,omitempty"`
-	Purp            *Purpose2Choice                               `xml:"Purp,omitempty"`
-	RgltryRptg      []*RegulatoryReporting3                       `xml:"RgltryRptg,omitempty"`
-	Tax             *TaxInformation3                              `xml:"Tax,omitempty"`
-	RltdRmtInf      []*RemittanceLocation2                        `xml:"RltdRmtInf,omitempty"`
-	RmtInf          *RemittanceInformation5                       `xml:"RmtInf,omitempty"`
+	PmtId           *PaymentIdentification1                       `xml:"PmtId"`
+	PmtTpInf        *PaymentTypeInformation19                     `xml:"PmtTpInf"`
+	Amt             *AmountType3Choice                            `xml:"Amt"`
+	XchgRateInf     *ExchangeRateInformation1                     `xml:"XchgRateInf"`
+	ChrgBr          string                                        `xml:"ChrgBr"`
+	ChqInstr        *Cheque6                                      `xml:"ChqInstr"`
+	UltmtDbtr       *PartyIdentification32                        `xml:"UltmtDbtr"`
+	IntrmyAgt1      *BranchAndFinancialInstitutionIdentification4 `xml:"IntrmyAgt1"`
+	IntrmyAgt1Acct  *CashAccount16                                `xml:"IntrmyAgt1Acct"`
+	IntrmyAgt2      *BranchAndFinancialInstitutionIdentification4 `xml:"IntrmyAgt2"`
+	IntrmyAgt2Acct  *CashAccount16                                `xml:"IntrmyAgt2Acct"`
+	IntrmyAgt3      *BranchAndFinancialInstitutionIdentification4 `xml:"IntrmyAgt3"`
+	IntrmyAgt3Acct  *CashAccount16                                `xml:"IntrmyAgt3Acct"`
+	CdtrAgt         *BranchAndFinancialInstitutionIdentification4 `xml:"CdtrAgt"`
+	CdtrAgtAcct     *CashAccount16                                `xml:"CdtrAgtAcct"`
+	Cdtr            *PartyIdentification32                        `xml:"Cdtr"`
+	CdtrAcct        *CashAccount16                                `xml:"CdtrAcct"`
+	UltmtCdtr       *PartyIdentification32                        `xml:"UltmtCdtr"`
+	InstrForCdtrAgt []*InstructionForCreditorAgent1               `xml:"InstrForCdtrAgt"`
+	InstrForDbtrAgt string                                        `xml:"InstrForDbtrAgt"`
+	Purp            *Purpose2Choice                               `xml:"Purp"`
+	RgltryRptg      []*RegulatoryReporting3                       `xml:"RgltryRptg"`
+	Tax             *TaxInformation3                              `xml:"Tax"`
+	RltdRmtInf      []*RemittanceLocation2                        `xml:"RltdRmtInf"`
+	RmtInf          *RemittanceInformation5                       `xml:"RmtInf"`
 }
 
 // CreditorReferenceInformation2 ...
 type CreditorReferenceInformation2 struct {
-	Tp  *CreditorReferenceType2 `xml:"Tp,omitempty"`
-	Ref string                  `xml:"Ref,omitempty"`
+	Tp  *CreditorReferenceType2 `xml:"Tp"`
+	Ref string                  `xml:"Ref"`
 }
 
 // CreditorReferenceType1Choice ...
 type CreditorReferenceType1Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // CreditorReferenceType2 ...
 type CreditorReferenceType2 struct {
-	CdOrPrtry *CreditorReferenceType1Choice `xml:"CdOrPrtry,omitempty"`
-	Issr      string                        `xml:"Issr,omitempty"`
+	CdOrPrtry *CreditorReferenceType1Choice `xml:"CdOrPrtry"`
+	Issr      string                        `xml:"Issr"`
 }
 
 // CustomerCreditTransferInitiationV03 ...
 type CustomerCreditTransferInitiationV03 struct {
-	GrpHdr *GroupHeader32                    `xml:"GrpHdr,omitempty"`
-	PmtInf []*PaymentInstructionInformation3 `xml:"PmtInf,omitempty"`
+	GrpHdr *GroupHeader32                    `xml:"GrpHdr"`
+	PmtInf []*PaymentInstructionInformation3 `xml:"PmtInf"`
 }
 
 // DateAndPlaceOfBirth ...
 type DateAndPlaceOfBirth struct {
-	BirthDt     string `xml:"BirthDt,omitempty"`
-	PrvcOfBirth string `xml:"PrvcOfBirth,omitempty"`
-	CityOfBirth string `xml:"CityOfBirth,omitempty"`
-	CtryOfBirth string `xml:"CtryOfBirth,omitempty"`
+	BirthDt     string `xml:"BirthDt"`
+	PrvcOfBirth string `xml:"PrvcOfBirth"`
+	CityOfBirth string `xml:"CityOfBirth"`
+	CtryOfBirth string `xml:"CtryOfBirth"`
 }
 
 // DatePeriodDetails ...
 type DatePeriodDetails struct {
-	FrDt string `xml:"FrDt,omitempty"`
-	ToDt string `xml:"ToDt,omitempty"`
+	FrDt string `xml:"FrDt"`
+	ToDt string `xml:"ToDt"`
 }
 
 // DecimalNumber ...
@@ -224,10 +224,10 @@ type DecimalNumber float64
 
 // DocumentAdjustment1 ...
 type DocumentAdjustment1 struct {
-	Amt       *ActiveOrHistoricCurrencyAndAmount `xml:"Amt,omitempty"`
-	CdtDbtInd string                             `xml:"CdtDbtInd,omitempty"`
-	Rsn       string                             `xml:"Rsn,omitempty"`
-	AddtlInf  string                             `xml:"AddtlInf,omitempty"`
+	Amt       *ActiveOrHistoricCurrencyAndAmount `xml:"Amt"`
+	CdtDbtInd string                             `xml:"CdtDbtInd"`
+	Rsn       string                             `xml:"Rsn"`
+	AddtlInf  string                             `xml:"AddtlInf"`
 }
 
 // DocumentType3Code ...
@@ -238,15 +238,15 @@ type DocumentType5Code string
 
 // EquivalentAmount2 ...
 type EquivalentAmount2 struct {
-	Amt      *ActiveOrHistoricCurrencyAndAmount `xml:"Amt,omitempty"`
-	CcyOfTrf string                             `xml:"CcyOfTrf,omitempty"`
+	Amt      *ActiveOrHistoricCurrencyAndAmount `xml:"Amt"`
+	CcyOfTrf string                             `xml:"CcyOfTrf"`
 }
 
 // ExchangeRateInformation1 ...
 type ExchangeRateInformation1 struct {
-	XchgRate float64 `xml:"XchgRate,omitempty"`
-	RateTp   string  `xml:"RateTp,omitempty"`
-	CtrctId  string  `xml:"CtrctId,omitempty"`
+	XchgRate float64 `xml:"XchgRate"`
+	RateTp   string  `xml:"RateTp"`
+	CtrctId  string  `xml:"CtrctId"`
 }
 
 // ExchangeRateType1Code ...
@@ -281,56 +281,56 @@ type ExternalServiceLevel1Code string
 
 // FinancialIdentificationSchemeName1Choice ...
 type FinancialIdentificationSchemeName1Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // FinancialInstitutionIdentification7 ...
 type FinancialInstitutionIdentification7 struct {
-	BIC         string                               `xml:"BIC,omitempty"`
-	ClrSysMmbId *ClearingSystemMemberIdentification2 `xml:"ClrSysMmbId,omitempty"`
-	Nm          string                               `xml:"Nm,omitempty"`
-	PstlAdr     *PostalAddress6                      `xml:"PstlAdr,omitempty"`
-	Othr        *GenericFinancialIdentification1     `xml:"Othr,omitempty"`
+	BIC         string                               `xml:"BIC"`
+	ClrSysMmbId *ClearingSystemMemberIdentification2 `xml:"ClrSysMmbId"`
+	Nm          string                               `xml:"Nm"`
+	PstlAdr     *PostalAddress6                      `xml:"PstlAdr"`
+	Othr        *GenericFinancialIdentification1     `xml:"Othr"`
 }
 
 // GenericAccountIdentification1 ...
 type GenericAccountIdentification1 struct {
-	Id      string                    `xml:"Id,omitempty"`
-	SchmeNm *AccountSchemeName1Choice `xml:"SchmeNm,omitempty"`
-	Issr    string                    `xml:"Issr,omitempty"`
+	Id      string                    `xml:"Id"`
+	SchmeNm *AccountSchemeName1Choice `xml:"SchmeNm"`
+	Issr    string                    `xml:"Issr"`
 }
 
 // GenericFinancialIdentification1 ...
 type GenericFinancialIdentification1 struct {
-	Id      string                                    `xml:"Id,omitempty"`
-	SchmeNm *FinancialIdentificationSchemeName1Choice `xml:"SchmeNm,omitempty"`
-	Issr    string                                    `xml:"Issr,omitempty"`
+	Id      string                                    `xml:"Id"`
+	SchmeNm *FinancialIdentificationSchemeName1Choice `xml:"SchmeNm"`
+	Issr    string                                    `xml:"Issr"`
 }
 
 // GenericOrganisationIdentification1 ...
 type GenericOrganisationIdentification1 struct {
-	Id      string                                       `xml:"Id,omitempty"`
-	SchmeNm *OrganisationIdentificationSchemeName1Choice `xml:"SchmeNm,omitempty"`
-	Issr    string                                       `xml:"Issr,omitempty"`
+	Id      string                                       `xml:"Id"`
+	SchmeNm *OrganisationIdentificationSchemeName1Choice `xml:"SchmeNm"`
+	Issr    string                                       `xml:"Issr"`
 }
 
 // GenericPersonIdentification1 ...
 type GenericPersonIdentification1 struct {
-	Id      string                                 `xml:"Id,omitempty"`
-	SchmeNm *PersonIdentificationSchemeName1Choice `xml:"SchmeNm,omitempty"`
-	Issr    string                                 `xml:"Issr,omitempty"`
+	Id      string                                 `xml:"Id"`
+	SchmeNm *PersonIdentificationSchemeName1Choice `xml:"SchmeNm"`
+	Issr    string                                 `xml:"Issr"`
 }
 
 // GroupHeader32 ...
 type GroupHeader32 struct {
-	MsgId    string                                        `xml:"MsgId,omitempty"`
-	CreDtTm  string                                        `xml:"CreDtTm,omitempty"`
-	Authstn  []*Authorisation1Choice                       `xml:"Authstn,omitempty"`
-	NbOfTxs  string                                        `xml:"NbOfTxs,omitempty"`
-	CtrlSum  float64                                       `xml:"CtrlSum,omitempty"`
-	InitgPty *PartyIdentification32                        `xml:"InitgPty,omitempty"`
-	FwdgAgt  *BranchAndFinancialInstitutionIdentification4 `xml:"FwdgAgt,omitempty"`
+	MsgId    string                                        `xml:"MsgId"`
+	CreDtTm  string                                        `xml:"CreDtTm"`
+	Authstn  []*Authorisation1Choice                       `xml:"Authstn"`
+	NbOfTxs  string                                        `xml:"NbOfTxs"`
+	CtrlSum  float64                                       `xml:"CtrlSum"`
+	InitgPty *PartyIdentification32                        `xml:"InitgPty"`
+	FwdgAgt  *BranchAndFinancialInstitutionIdentification4 `xml:"FwdgAgt"`
 }
 
 // IBAN2007Identifier ...
@@ -347,14 +347,14 @@ type Instruction3Code string
 
 // InstructionForCreditorAgent1 ...
 type InstructionForCreditorAgent1 struct {
-	Cd       string `xml:"Cd,omitempty"`
-	InstrInf string `xml:"InstrInf,omitempty"`
+	Cd       string `xml:"Cd"`
+	InstrInf string `xml:"InstrInf"`
 }
 
 // LocalInstrument2Choice ...
 type LocalInstrument2Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // Max10Text ...
@@ -389,8 +389,8 @@ type Max70Text string
 
 // NameAndAddress10 ...
 type NameAndAddress10 struct {
-	Nm  string          `xml:"Nm,omitempty"`
-	Adr *PostalAddress6 `xml:"Adr,omitempty"`
+	Nm  string          `xml:"Nm"`
+	Adr *PostalAddress6 `xml:"Adr"`
 }
 
 // NamePrefix1Code ...
@@ -401,56 +401,56 @@ type Number float64
 
 // OrganisationIdentification4 ...
 type OrganisationIdentification4 struct {
-	BICOrBEI string                                `xml:"BICOrBEI,omitempty"`
-	Othr     []*GenericOrganisationIdentification1 `xml:"Othr,omitempty"`
+	BICOrBEI string                                `xml:"BICOrBEI"`
+	Othr     []*GenericOrganisationIdentification1 `xml:"Othr"`
 }
 
 // OrganisationIdentificationSchemeName1Choice ...
 type OrganisationIdentificationSchemeName1Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // Party6Choice ...
 type Party6Choice struct {
-	OrgId  *OrganisationIdentification4 `xml:"OrgId,omitempty"`
-	PrvtId *PersonIdentification5       `xml:"PrvtId,omitempty"`
+	OrgId  *OrganisationIdentification4 `xml:"OrgId"`
+	PrvtId *PersonIdentification5       `xml:"PrvtId"`
 }
 
 // PartyIdentification32 ...
 type PartyIdentification32 struct {
-	Nm        string           `xml:"Nm,omitempty"`
-	PstlAdr   *PostalAddress6  `xml:"PstlAdr,omitempty"`
-	Id        *Party6Choice    `xml:"Id,omitempty"`
-	CtryOfRes string           `xml:"CtryOfRes,omitempty"`
-	CtctDtls  *ContactDetails2 `xml:"CtctDtls,omitempty"`
+	Nm        string           `xml:"Nm"`
+	PstlAdr   *PostalAddress6  `xml:"PstlAdr"`
+	Id        *Party6Choice    `xml:"Id"`
+	CtryOfRes string           `xml:"CtryOfRes"`
+	CtctDtls  *ContactDetails2 `xml:"CtctDtls"`
 }
 
 // PaymentIdentification1 ...
 type PaymentIdentification1 struct {
-	InstrId    string `xml:"InstrId,omitempty"`
-	EndToEndId string `xml:"EndToEndId,omitempty"`
+	InstrId    string `xml:"InstrId"`
+	EndToEndId string `xml:"EndToEndId"`
 }
 
 // PaymentInstructionInformation3 ...
 type PaymentInstructionInformation3 struct {
-	PmtInfId        string                                        `xml:"PmtInfId,omitempty"`
-	PmtMtd          string                                        `xml:"PmtMtd,omitempty"`
-	BtchBookg       bool                                          `xml:"BtchBookg,omitempty"`
-	NbOfTxs         string                                        `xml:"NbOfTxs,omitempty"`
-	CtrlSum         float64                                       `xml:"CtrlSum,omitempty"`
-	PmtTpInf        *PaymentTypeInformation19                     `xml:"PmtTpInf,omitempty"`
-	ReqdExctnDt     string                                        `xml:"ReqdExctnDt,omitempty"`
-	PoolgAdjstmntDt string                                        `xml:"PoolgAdjstmntDt,omitempty"`
-	Dbtr            *PartyIdentification32                        `xml:"Dbtr,omitempty"`
-	DbtrAcct        *CashAccount16                                `xml:"DbtrAcct,omitempty"`
-	DbtrAgt         *BranchAndFinancialInstitutionIdentification4 `xml:"DbtrAgt,omitempty"`
-	DbtrAgtAcct     *CashAccount16                                `xml:"DbtrAgtAcct,omitempty"`
-	UltmtDbtr       *PartyIdentification32                        `xml:"UltmtDbtr,omitempty"`
-	ChrgBr          string                                        `xml:"ChrgBr,omitempty"`
-	ChrgsAcct       *CashAccount16                                `xml:"ChrgsAcct,omitempty"`
-	ChrgsAcctAgt    *BranchAndFinancialInstitutionIdentification4 `xml:"ChrgsAcctAgt,omitempty"`
-	CdtTrfTxInf     []*CreditTransferTransactionInformation10     `xml:"CdtTrfTxInf,omitempty"`
+	PmtInfId        string                                        `xml:"PmtInfId"`
+	PmtMtd          string                                        `xml:"PmtMtd"`
+	BtchBookg       bool                                          `xml:"BtchBookg"`
+	NbOfTxs         string                                        `xml:"NbOfTxs"`
+	CtrlSum         float64                                       `xml:"CtrlSum"`
+	PmtTpInf        *PaymentTypeInformation19                     `xml:"PmtTpInf"`
+	ReqdExctnDt     string                                        `xml:"ReqdExctnDt"`
+	PoolgAdjstmntDt string                                        `xml:"PoolgAdjstmntDt"`
+	Dbtr            *PartyIdentification32                        `xml:"Dbtr"`
+	DbtrAcct        *CashAccount16                                `xml:"DbtrAcct"`
+	DbtrAgt         *BranchAndFinancialInstitutionIdentification4 `xml:"DbtrAgt"`
+	DbtrAgtAcct     *CashAccount16                                `xml:"DbtrAgtAcct"`
+	UltmtDbtr       *PartyIdentification32                        `xml:"UltmtDbtr"`
+	ChrgBr          string                                        `xml:"ChrgBr"`
+	ChrgsAcct       *CashAccount16                                `xml:"ChrgsAcct"`
+	ChrgsAcctAgt    *BranchAndFinancialInstitutionIdentification4 `xml:"ChrgsAcctAgt"`
+	CdtTrfTxInf     []*CreditTransferTransactionInformation10     `xml:"CdtTrfTxInf"`
 }
 
 // PaymentMethod3Code ...
@@ -458,10 +458,10 @@ type PaymentMethod3Code string
 
 // PaymentTypeInformation19 ...
 type PaymentTypeInformation19 struct {
-	InstrPrty string                  `xml:"InstrPrty,omitempty"`
-	SvcLvl    *ServiceLevel8Choice    `xml:"SvcLvl,omitempty"`
-	LclInstrm *LocalInstrument2Choice `xml:"LclInstrm,omitempty"`
-	CtgyPurp  *CategoryPurpose1Choice `xml:"CtgyPurp,omitempty"`
+	InstrPrty string                  `xml:"InstrPrty"`
+	SvcLvl    *ServiceLevel8Choice    `xml:"SvcLvl"`
+	LclInstrm *LocalInstrument2Choice `xml:"LclInstrm"`
+	CtgyPurp  *CategoryPurpose1Choice `xml:"CtgyPurp"`
 }
 
 // PercentageRate ...
@@ -469,14 +469,14 @@ type PercentageRate float64
 
 // PersonIdentification5 ...
 type PersonIdentification5 struct {
-	DtAndPlcOfBirth *DateAndPlaceOfBirth            `xml:"DtAndPlcOfBirth,omitempty"`
-	Othr            []*GenericPersonIdentification1 `xml:"Othr,omitempty"`
+	DtAndPlcOfBirth *DateAndPlaceOfBirth            `xml:"DtAndPlcOfBirth"`
+	Othr            []*GenericPersonIdentification1 `xml:"Othr"`
 }
 
 // PersonIdentificationSchemeName1Choice ...
 type PersonIdentificationSchemeName1Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // PhoneNumber ...
@@ -484,16 +484,16 @@ type PhoneNumber string
 
 // PostalAddress6 ...
 type PostalAddress6 struct {
-	AdrTp       string   `xml:"AdrTp,omitempty"`
-	Dept        string   `xml:"Dept,omitempty"`
-	SubDept     string   `xml:"SubDept,omitempty"`
-	StrtNm      string   `xml:"StrtNm,omitempty"`
-	BldgNb      string   `xml:"BldgNb,omitempty"`
-	PstCd       string   `xml:"PstCd,omitempty"`
-	TwnNm       string   `xml:"TwnNm,omitempty"`
-	CtrySubDvsn string   `xml:"CtrySubDvsn,omitempty"`
-	Ctry        string   `xml:"Ctry,omitempty"`
-	AdrLine     []string `xml:"AdrLine,omitempty"`
+	AdrTp       string   `xml:"AdrTp"`
+	Dept        string   `xml:"Dept"`
+	SubDept     string   `xml:"SubDept"`
+	StrtNm      string   `xml:"StrtNm"`
+	BldgNb      string   `xml:"BldgNb"`
+	PstCd       string   `xml:"PstCd"`
+	TwnNm       string   `xml:"TwnNm"`
+	CtrySubDvsn string   `xml:"CtrySubDvsn"`
+	Ctry        string   `xml:"Ctry"`
+	AdrLine     []string `xml:"AdrLine"`
 }
 
 // Priority2Code ...
@@ -501,40 +501,40 @@ type Priority2Code string
 
 // Purpose2Choice ...
 type Purpose2Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // ReferredDocumentInformation3 ...
 type ReferredDocumentInformation3 struct {
-	Tp     *ReferredDocumentType2 `xml:"Tp,omitempty"`
-	Nb     string                 `xml:"Nb,omitempty"`
-	RltdDt string                 `xml:"RltdDt,omitempty"`
+	Tp     *ReferredDocumentType2 `xml:"Tp"`
+	Nb     string                 `xml:"Nb"`
+	RltdDt string                 `xml:"RltdDt"`
 }
 
 // ReferredDocumentType1Choice ...
 type ReferredDocumentType1Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // ReferredDocumentType2 ...
 type ReferredDocumentType2 struct {
-	CdOrPrtry *ReferredDocumentType1Choice `xml:"CdOrPrtry,omitempty"`
-	Issr      string                       `xml:"Issr,omitempty"`
+	CdOrPrtry *ReferredDocumentType1Choice `xml:"CdOrPrtry"`
+	Issr      string                       `xml:"Issr"`
 }
 
 // RegulatoryAuthority2 ...
 type RegulatoryAuthority2 struct {
-	Nm   string `xml:"Nm,omitempty"`
-	Ctry string `xml:"Ctry,omitempty"`
+	Nm   string `xml:"Nm"`
+	Ctry string `xml:"Ctry"`
 }
 
 // RegulatoryReporting3 ...
 type RegulatoryReporting3 struct {
-	DbtCdtRptgInd string                            `xml:"DbtCdtRptgInd,omitempty"`
-	Authrty       *RegulatoryAuthority2             `xml:"Authrty,omitempty"`
-	Dtls          []*StructuredRegulatoryReporting3 `xml:"Dtls,omitempty"`
+	DbtCdtRptgInd string                            `xml:"DbtCdtRptgInd"`
+	Authrty       *RegulatoryAuthority2             `xml:"Authrty"`
+	Dtls          []*StructuredRegulatoryReporting3 `xml:"Dtls"`
 }
 
 // RegulatoryReportingType1Code ...
@@ -542,26 +542,26 @@ type RegulatoryReportingType1Code string
 
 // RemittanceAmount1 ...
 type RemittanceAmount1 struct {
-	DuePyblAmt        *ActiveOrHistoricCurrencyAndAmount `xml:"DuePyblAmt,omitempty"`
-	DscntApldAmt      *ActiveOrHistoricCurrencyAndAmount `xml:"DscntApldAmt,omitempty"`
-	CdtNoteAmt        *ActiveOrHistoricCurrencyAndAmount `xml:"CdtNoteAmt,omitempty"`
-	TaxAmt            *ActiveOrHistoricCurrencyAndAmount `xml:"TaxAmt,omitempty"`
-	AdjstmntAmtAndRsn []*DocumentAdjustment1             `xml:"AdjstmntAmtAndRsn,omitempty"`
-	RmtdAmt           *ActiveOrHistoricCurrencyAndAmount `xml:"RmtdAmt,omitempty"`
+	DuePyblAmt        *ActiveOrHistoricCurrencyAndAmount `xml:"DuePyblAmt"`
+	DscntApldAmt      *ActiveOrHistoricCurrencyAndAmount `xml:"DscntApldAmt"`
+	CdtNoteAmt        *ActiveOrHistoricCurrencyAndAmount `xml:"CdtNoteAmt"`
+	TaxAmt            *ActiveOrHistoricCurrencyAndAmount `xml:"TaxAmt"`
+	AdjstmntAmtAndRsn []*DocumentAdjustment1             `xml:"AdjstmntAmtAndRsn"`
+	RmtdAmt           *ActiveOrHistoricCurrencyAndAmount `xml:"RmtdAmt"`
 }
 
 // RemittanceInformation5 ...
 type RemittanceInformation5 struct {
-	Ustrd []string                            `xml:"Ustrd,omitempty"`
-	Strd  []*StructuredRemittanceInformation7 `xml:"Strd,omitempty"`
+	Ustrd []string                            `xml:"Ustrd"`
+	Strd  []*StructuredRemittanceInformation7 `xml:"Strd"`
 }
 
 // RemittanceLocation2 ...
 type RemittanceLocation2 struct {
-	RmtId             string            `xml:"RmtId,omitempty"`
-	RmtLctnMtd        string            `xml:"RmtLctnMtd,omitempty"`
-	RmtLctnElctrncAdr string            `xml:"RmtLctnElctrncAdr,omitempty"`
-	RmtLctnPstlAdr    *NameAndAddress10 `xml:"RmtLctnPstlAdr,omitempty"`
+	RmtId             string            `xml:"RmtId"`
+	RmtLctnMtd        string            `xml:"RmtLctnMtd"`
+	RmtLctnElctrncAdr string            `xml:"RmtLctnElctrncAdr"`
+	RmtLctnPstlAdr    *NameAndAddress10 `xml:"RmtLctnPstlAdr"`
 }
 
 // RemittanceLocationMethod2Code ...
@@ -569,97 +569,97 @@ type RemittanceLocationMethod2Code string
 
 // ServiceLevel8Choice ...
 type ServiceLevel8Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    string `xml:"Cd"`
+	Prtry string `xml:"Prtry"`
 }
 
 // StructuredRegulatoryReporting3 ...
 type StructuredRegulatoryReporting3 struct {
-	Tp   string                             `xml:"Tp,omitempty"`
-	Dt   string                             `xml:"Dt,omitempty"`
-	Ctry string                             `xml:"Ctry,omitempty"`
-	Cd   string                             `xml:"Cd,omitempty"`
-	Amt  *ActiveOrHistoricCurrencyAndAmount `xml:"Amt,omitempty"`
-	Inf  []string                           `xml:"Inf,omitempty"`
+	Tp   string                             `xml:"Tp"`
+	Dt   string                             `xml:"Dt"`
+	Ctry string                             `xml:"Ctry"`
+	Cd   string                             `xml:"Cd"`
+	Amt  *ActiveOrHistoricCurrencyAndAmount `xml:"Amt"`
+	Inf  []string                           `xml:"Inf"`
 }
 
 // StructuredRemittanceInformation7 ...
 type StructuredRemittanceInformation7 struct {
-	RfrdDocInf  []*ReferredDocumentInformation3 `xml:"RfrdDocInf,omitempty"`
-	RfrdDocAmt  *RemittanceAmount1              `xml:"RfrdDocAmt,omitempty"`
-	CdtrRefInf  *CreditorReferenceInformation2  `xml:"CdtrRefInf,omitempty"`
-	Invcr       *PartyIdentification32          `xml:"Invcr,omitempty"`
-	Invcee      *PartyIdentification32          `xml:"Invcee,omitempty"`
-	AddtlRmtInf []string                        `xml:"AddtlRmtInf,omitempty"`
+	RfrdDocInf  []*ReferredDocumentInformation3 `xml:"RfrdDocInf"`
+	RfrdDocAmt  *RemittanceAmount1              `xml:"RfrdDocAmt"`
+	CdtrRefInf  *CreditorReferenceInformation2  `xml:"CdtrRefInf"`
+	Invcr       *PartyIdentification32          `xml:"Invcr"`
+	Invcee      *PartyIdentification32          `xml:"Invcee"`
+	AddtlRmtInf []string                        `xml:"AddtlRmtInf"`
 }
 
 // TaxAmount1 ...
 type TaxAmount1 struct {
-	Rate         float64                            `xml:"Rate,omitempty"`
-	TaxblBaseAmt *ActiveOrHistoricCurrencyAndAmount `xml:"TaxblBaseAmt,omitempty"`
-	TtlAmt       *ActiveOrHistoricCurrencyAndAmount `xml:"TtlAmt,omitempty"`
-	Dtls         []*TaxRecordDetails1               `xml:"Dtls,omitempty"`
+	Rate         float64                            `xml:"Rate"`
+	TaxblBaseAmt *ActiveOrHistoricCurrencyAndAmount `xml:"TaxblBaseAmt"`
+	TtlAmt       *ActiveOrHistoricCurrencyAndAmount `xml:"TtlAmt"`
+	Dtls         []*TaxRecordDetails1               `xml:"Dtls"`
 }
 
 // TaxAuthorisation1 ...
 type TaxAuthorisation1 struct {
-	Titl string `xml:"Titl,omitempty"`
-	Nm   string `xml:"Nm,omitempty"`
+	Titl string `xml:"Titl"`
+	Nm   string `xml:"Nm"`
 }
 
 // TaxInformation3 ...
 type TaxInformation3 struct {
-	Cdtr            *TaxParty1                         `xml:"Cdtr,omitempty"`
-	Dbtr            *TaxParty2                         `xml:"Dbtr,omitempty"`
-	AdmstnZn        string                             `xml:"AdmstnZn,omitempty"`
-	RefNb           string                             `xml:"RefNb,omitempty"`
-	Mtd             string                             `xml:"Mtd,omitempty"`
-	TtlTaxblBaseAmt *ActiveOrHistoricCurrencyAndAmount `xml:"TtlTaxblBaseAmt,omitempty"`
-	TtlTaxAmt       *ActiveOrHistoricCurrencyAndAmount `xml:"TtlTaxAmt,omitempty"`
-	Dt              string                             `xml:"Dt,omitempty"`
-	SeqNb           float64                            `xml:"SeqNb,omitempty"`
-	Rcrd            []*TaxRecord1                      `xml:"Rcrd,omitempty"`
+	Cdtr            *TaxParty1                         `xml:"Cdtr"`
+	Dbtr            *TaxParty2                         `xml:"Dbtr"`
+	AdmstnZn        string                             `xml:"AdmstnZn"`
+	RefNb           string                             `xml:"RefNb"`
+	Mtd             string                             `xml:"Mtd"`
+	TtlTaxblBaseAmt *ActiveOrHistoricCurrencyAndAmount `xml:"TtlTaxblBaseAmt"`
+	TtlTaxAmt       *ActiveOrHistoricCurrencyAndAmount `xml:"TtlTaxAmt"`
+	Dt              string                             `xml:"Dt"`
+	SeqNb           float64                            `xml:"SeqNb"`
+	Rcrd            []*TaxRecord1                      `xml:"Rcrd"`
 }
 
 // TaxParty1 ...
 type TaxParty1 struct {
-	TaxId  string `xml:"TaxId,omitempty"`
-	RegnId string `xml:"RegnId,omitempty"`
-	TaxTp  string `xml:"TaxTp,omitempty"`
+	TaxId  string `xml:"TaxId"`
+	RegnId string `xml:"RegnId"`
+	TaxTp  string `xml:"TaxTp"`
 }
 
 // TaxParty2 ...
 type TaxParty2 struct {
-	TaxId   string             `xml:"TaxId,omitempty"`
-	RegnId  string             `xml:"RegnId,omitempty"`
-	TaxTp   string             `xml:"TaxTp,omitempty"`
-	Authstn *TaxAuthorisation1 `xml:"Authstn,omitempty"`
+	TaxId   string             `xml:"TaxId"`
+	RegnId  string             `xml:"RegnId"`
+	TaxTp   string             `xml:"TaxTp"`
+	Authstn *TaxAuthorisation1 `xml:"Authstn"`
 }
 
 // TaxPeriod1 ...
 type TaxPeriod1 struct {
-	Yr     string             `xml:"Yr,omitempty"`
-	Tp     string             `xml:"Tp,omitempty"`
-	FrToDt *DatePeriodDetails `xml:"FrToDt,omitempty"`
+	Yr     string             `xml:"Yr"`
+	Tp     string             `xml:"Tp"`
+	FrToDt *DatePeriodDetails `xml:"FrToDt"`
 }
 
 // TaxRecord1 ...
 type TaxRecord1 struct {
-	Tp       string      `xml:"Tp,omitempty"`
-	Ctgy     string      `xml:"Ctgy,omitempty"`
-	CtgyDtls string      `xml:"CtgyDtls,omitempty"`
-	DbtrSts  string      `xml:"DbtrSts,omitempty"`
-	CertId   string      `xml:"CertId,omitempty"`
-	FrmsCd   string      `xml:"FrmsCd,omitempty"`
-	Prd      *TaxPeriod1 `xml:"Prd,omitempty"`
-	TaxAmt   *TaxAmount1 `xml:"TaxAmt,omitempty"`
-	AddtlInf string      `xml:"AddtlInf,omitempty"`
+	Tp       string      `xml:"Tp"`
+	Ctgy     string      `xml:"Ctgy"`
+	CtgyDtls string      `xml:"CtgyDtls"`
+	DbtrSts  string      `xml:"DbtrSts"`
+	CertId   string      `xml:"CertId"`
+	FrmsCd   string      `xml:"FrmsCd"`
+	Prd      *TaxPeriod1 `xml:"Prd"`
+	TaxAmt   *TaxAmount1 `xml:"TaxAmt"`
+	AddtlInf string      `xml:"AddtlInf"`
 }
 
 // TaxRecordDetails1 ...
 type TaxRecordDetails1 struct {
-	Prd *TaxPeriod1                        `xml:"Prd,omitempty"`
-	Amt *ActiveOrHistoricCurrencyAndAmount `xml:"Amt,omitempty"`
+	Prd *TaxPeriod1                        `xml:"Prd"`
+	Amt *ActiveOrHistoricCurrencyAndAmount `xml:"Amt"`
 }
 
 // TaxRecordPeriod1Code ...
