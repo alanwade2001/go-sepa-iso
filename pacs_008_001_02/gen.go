@@ -2,10 +2,6 @@
 
 package pacs_008_001_02
 
-import (
-	"time"
-)
-
 // Document ...
 type Document *Document
 
@@ -148,12 +144,12 @@ type CreditTransferTransactionInformation11 struct {
 	PmtId            *PaymentIdentification3                       `xml:"PmtId"`
 	PmtTpInf         *PaymentTypeInformation21                     `xml:"PmtTpInf"`
 	IntrBkSttlmAmt   *ActiveCurrencyAndAmount                      `xml:"IntrBkSttlmAmt"`
-	IntrBkSttlmDt    time.Time                                     `xml:"IntrBkSttlmDt"`
+	IntrBkSttlmDt    string                                        `xml:"IntrBkSttlmDt"`
 	SttlmPrty        string                                        `xml:"SttlmPrty"`
 	SttlmTmIndctn    *SettlementDateTimeIndication1                `xml:"SttlmTmIndctn"`
 	SttlmTmReq       *SettlementTimeRequest2                       `xml:"SttlmTmReq"`
-	AccptncDtTm      time.Time                                     `xml:"AccptncDtTm"`
-	PoolgAdjstmntDt  time.Time                                     `xml:"PoolgAdjstmntDt"`
+	AccptncDtTm      string                                        `xml:"AccptncDtTm"`
+	PoolgAdjstmntDt  string                                        `xml:"PoolgAdjstmntDt"`
 	InstdAmt         *ActiveOrHistoricCurrencyAndAmount            `xml:"InstdAmt"`
 	XchgRate         float64                                       `xml:"XchgRate"`
 	ChrgBr           string                                        `xml:"ChrgBr"`
@@ -207,10 +203,10 @@ type CreditorReferenceType2 struct {
 
 // DateAndPlaceOfBirth ...
 type DateAndPlaceOfBirth struct {
-	BirthDt     time.Time `xml:"BirthDt"`
-	PrvcOfBirth string    `xml:"PrvcOfBirth"`
-	CityOfBirth string    `xml:"CityOfBirth"`
-	CtryOfBirth string    `xml:"CtryOfBirth"`
+	BirthDt     string `xml:"BirthDt"`
+	PrvcOfBirth string `xml:"PrvcOfBirth"`
+	CityOfBirth string `xml:"CityOfBirth"`
+	CtryOfBirth string `xml:"CtryOfBirth"`
 }
 
 // DecimalNumber ...
@@ -312,12 +308,12 @@ type GenericPersonIdentification1 struct {
 // GroupHeader33 ...
 type GroupHeader33 struct {
 	MsgId             string                                        `xml:"MsgId"`
-	CreDtTm           time.Time                                     `xml:"CreDtTm"`
+	CreDtTm           string                                        `xml:"CreDtTm"`
 	BtchBookg         bool                                          `xml:"BtchBookg"`
 	NbOfTxs           string                                        `xml:"NbOfTxs"`
 	CtrlSum           float64                                       `xml:"CtrlSum"`
 	TtlIntrBkSttlmAmt *ActiveCurrencyAndAmount                      `xml:"TtlIntrBkSttlmAmt"`
-	IntrBkSttlmDt     time.Time                                     `xml:"IntrBkSttlmDt"`
+	IntrBkSttlmDt     string                                        `xml:"IntrBkSttlmDt"`
 	SttlmInf          *SettlementInformation13                      `xml:"SttlmInf"`
 	PmtTpInf          *PaymentTypeInformation21                     `xml:"PmtTpInf"`
 	InstgAgt          *BranchAndFinancialInstitutionIdentification4 `xml:"InstgAgt"`
@@ -328,13 +324,13 @@ type GroupHeader33 struct {
 type IBAN2007Identifier string
 
 // ISODate ...
-type ISODate time.Time
+type ISODate string
 
 // ISODateTime ...
-type ISODateTime time.Time
+type ISODateTime string
 
 // ISOTime ...
-type ISOTime time.Time
+type ISOTime string
 
 // Instruction3Code ...
 type Instruction3Code string
@@ -485,7 +481,7 @@ type Purpose2Choice struct {
 type ReferredDocumentInformation3 struct {
 	Tp     *ReferredDocumentType2 `xml:"Tp"`
 	Nb     string                 `xml:"Nb"`
-	RltdDt time.Time              `xml:"RltdDt"`
+	RltdDt string                 `xml:"RltdDt"`
 }
 
 // ReferredDocumentType1Choice ...
@@ -551,8 +547,8 @@ type ServiceLevel8Choice struct {
 
 // SettlementDateTimeIndication1 ...
 type SettlementDateTimeIndication1 struct {
-	DbtDtTm time.Time `xml:"DbtDtTm"`
-	CdtDtTm time.Time `xml:"CdtDtTm"`
+	DbtDtTm string `xml:"DbtDtTm"`
+	CdtDtTm string `xml:"CdtDtTm"`
 }
 
 // SettlementInformation13 ...
@@ -573,16 +569,16 @@ type SettlementMethod1Code string
 
 // SettlementTimeRequest2 ...
 type SettlementTimeRequest2 struct {
-	CLSTm  time.Time `xml:"CLSTm"`
-	TillTm time.Time `xml:"TillTm"`
-	FrTm   time.Time `xml:"FrTm"`
-	RjctTm time.Time `xml:"RjctTm"`
+	CLSTm  string `xml:"CLSTm"`
+	TillTm string `xml:"TillTm"`
+	FrTm   string `xml:"FrTm"`
+	RjctTm string `xml:"RjctTm"`
 }
 
 // StructuredRegulatoryReporting3 ...
 type StructuredRegulatoryReporting3 struct {
 	Tp   string                             `xml:"Tp"`
-	Dt   time.Time                          `xml:"Dt"`
+	Dt   string                             `xml:"Dt"`
 	Ctry string                             `xml:"Ctry"`
 	Cd   string                             `xml:"Cd"`
 	Amt  *ActiveOrHistoricCurrencyAndAmount `xml:"Amt"`

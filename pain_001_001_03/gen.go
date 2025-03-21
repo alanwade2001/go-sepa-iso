@@ -2,10 +2,6 @@
 
 package pain_001_001_03
 
-import (
-	"time"
-)
-
 // Document ...
 type Document *Document
 
@@ -110,7 +106,7 @@ type Cheque6 struct {
 	DlvryMtd    *ChequeDeliveryMethod1Choice `xml:"DlvryMtd"`
 	DlvrTo      *NameAndAddress10            `xml:"DlvrTo"`
 	InstrPrty   string                       `xml:"InstrPrty"`
-	ChqMtrtyDt  time.Time                    `xml:"ChqMtrtyDt"`
+	ChqMtrtyDt  string                       `xml:"ChqMtrtyDt"`
 	FrmsCd      string                       `xml:"FrmsCd"`
 	MemoFld     []string                     `xml:"MemoFld"`
 	RgnlClrZone string                       `xml:"RgnlClrZone"`
@@ -213,16 +209,16 @@ type CustomerCreditTransferInitiationV03 struct {
 
 // DateAndPlaceOfBirth ...
 type DateAndPlaceOfBirth struct {
-	BirthDt     time.Time `xml:"BirthDt"`
-	PrvcOfBirth string    `xml:"PrvcOfBirth"`
-	CityOfBirth string    `xml:"CityOfBirth"`
-	CtryOfBirth string    `xml:"CtryOfBirth"`
+	BirthDt     string `xml:"BirthDt"`
+	PrvcOfBirth string `xml:"PrvcOfBirth"`
+	CityOfBirth string `xml:"CityOfBirth"`
+	CtryOfBirth string `xml:"CtryOfBirth"`
 }
 
 // DatePeriodDetails ...
 type DatePeriodDetails struct {
-	FrDt time.Time `xml:"FrDt"`
-	ToDt time.Time `xml:"ToDt"`
+	FrDt string `xml:"FrDt"`
+	ToDt string `xml:"ToDt"`
 }
 
 // DecimalNumber ...
@@ -331,7 +327,7 @@ type GenericPersonIdentification1 struct {
 // GroupHeader32 ...
 type GroupHeader32 struct {
 	MsgId    string                                        `xml:"MsgId"`
-	CreDtTm  time.Time                                     `xml:"CreDtTm"`
+	CreDtTm  string                                        `xml:"CreDtTm"`
 	Authstn  []*Authorisation1Choice                       `xml:"Authstn"`
 	NbOfTxs  string                                        `xml:"NbOfTxs"`
 	CtrlSum  float64                                       `xml:"CtrlSum"`
@@ -343,10 +339,10 @@ type GroupHeader32 struct {
 type IBAN2007Identifier string
 
 // ISODate ...
-type ISODate time.Time
+type ISODate string
 
 // ISODateTime ...
-type ISODateTime time.Time
+type ISODateTime string
 
 // Instruction3Code ...
 type Instruction3Code string
@@ -446,8 +442,8 @@ type PaymentInstructionInformation3 struct {
 	NbOfTxs         string                                        `xml:"NbOfTxs"`
 	CtrlSum         float64                                       `xml:"CtrlSum"`
 	PmtTpInf        *PaymentTypeInformation19                     `xml:"PmtTpInf"`
-	ReqdExctnDt     time.Time                                     `xml:"ReqdExctnDt"`
-	PoolgAdjstmntDt time.Time                                     `xml:"PoolgAdjstmntDt"`
+	ReqdExctnDt     string                                        `xml:"ReqdExctnDt"`
+	PoolgAdjstmntDt string                                        `xml:"PoolgAdjstmntDt"`
 	Dbtr            *PartyIdentification32                        `xml:"Dbtr"`
 	DbtrAcct        *CashAccount16                                `xml:"DbtrAcct"`
 	DbtrAgt         *BranchAndFinancialInstitutionIdentification4 `xml:"DbtrAgt"`
@@ -515,7 +511,7 @@ type Purpose2Choice struct {
 type ReferredDocumentInformation3 struct {
 	Tp     *ReferredDocumentType2 `xml:"Tp"`
 	Nb     string                 `xml:"Nb"`
-	RltdDt time.Time              `xml:"RltdDt"`
+	RltdDt string                 `xml:"RltdDt"`
 }
 
 // ReferredDocumentType1Choice ...
@@ -582,7 +578,7 @@ type ServiceLevel8Choice struct {
 // StructuredRegulatoryReporting3 ...
 type StructuredRegulatoryReporting3 struct {
 	Tp   string                             `xml:"Tp"`
-	Dt   time.Time                          `xml:"Dt"`
+	Dt   string                             `xml:"Dt"`
 	Ctry string                             `xml:"Ctry"`
 	Cd   string                             `xml:"Cd"`
 	Amt  *ActiveOrHistoricCurrencyAndAmount `xml:"Amt"`
@@ -622,7 +618,7 @@ type TaxInformation3 struct {
 	Mtd             string                             `xml:"Mtd"`
 	TtlTaxblBaseAmt *ActiveOrHistoricCurrencyAndAmount `xml:"TtlTaxblBaseAmt"`
 	TtlTaxAmt       *ActiveOrHistoricCurrencyAndAmount `xml:"TtlTaxAmt"`
-	Dt              time.Time                          `xml:"Dt"`
+	Dt              string                             `xml:"Dt"`
 	SeqNb           float64                            `xml:"SeqNb"`
 	Rcrd            []*TaxRecord1                      `xml:"Rcrd"`
 }
@@ -644,7 +640,7 @@ type TaxParty2 struct {
 
 // TaxPeriod1 ...
 type TaxPeriod1 struct {
-	Yr     time.Time          `xml:"Yr"`
+	Yr     string             `xml:"Yr"`
 	Tp     string             `xml:"Tp"`
 	FrToDt *DatePeriodDetails `xml:"FrToDt"`
 }
