@@ -2,8 +2,10 @@ package schema_test
 
 import (
 	"encoding/xml"
+	"strings"
 	"testing"
 
+	"github.com/alanwade2001/go-sepa-iso/pacs_008_001_02"
 	"github.com/alanwade2001/go-sepa-iso/schema"
 	"github.com/stretchr/testify/assert"
 
@@ -279,4 +281,20 @@ func TestPain001Schema(t *testing.T) {
 
 		})
 	}
+}
+
+func TestEmpty(t *testing.T) {
+
+	c := &pacs_008_001_02.AccountSchemeName1Choice{
+		Prtry: "prtry",
+	}
+
+	data, err := xml.Marshal(c)
+
+	assert.NoError(t, err)
+
+	str := string(data)
+
+	assert.False(t, strings.Contains(str, "Cd"))
+
 }
