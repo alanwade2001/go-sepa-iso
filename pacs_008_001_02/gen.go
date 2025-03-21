@@ -15,8 +15,8 @@ type AccountIdentification4Choice struct {
 
 // AccountSchemeName1Choice ...
 type AccountSchemeName1Choice struct {
-	Cd    string `xml:"Cd,omitempty"`
-	Prtry string `xml:"Prtry,omitempty"`
+	Cd    *string `xml:"Cd,omitempty"`
+	Prtry *string `xml:"Prtry,omitempty"`
 }
 
 // ActiveCurrencyAndAmountSimpleType ...
