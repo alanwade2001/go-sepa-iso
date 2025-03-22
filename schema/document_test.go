@@ -7,13 +7,14 @@ import (
 	"testing"
 
 	"github.com/alanwade2001/go-sepa-iso/pacs_008_001_02"
+	"github.com/alanwade2001/go-sepa-iso/pain_001_001_03"
 	"github.com/alanwade2001/go-sepa-iso/schema"
 	"github.com/stretchr/testify/assert"
 
 	xsdvalidate "github.com/terminalstatic/go-xsd-validate"
 )
 
-var GOOD_XML string = `<?xml version="1.0" encoding="UTF-8"?>
+var P1_GOOD_XML string = `<?xml version="1.0" encoding="UTF-8"?>
 <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
     <CstmrCdtTrfInitn>
         <GrpHdr>
@@ -77,7 +78,7 @@ var GOOD_XML string = `<?xml version="1.0" encoding="UTF-8"?>
     </CstmrCdtTrfInitn>
 </Document>`
 
-var BAD_XML_MISSING_MSGID string = `<?xml version="1.0" encoding="UTF-8"?>
+var P1_BAD_XML_MISSING_MSGID string = `<?xml version="1.0" encoding="UTF-8"?>
 <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
     <CstmrCdtTrfInitn>
         <GrpHdr>            
@@ -140,7 +141,7 @@ var BAD_XML_MISSING_MSGID string = `<?xml version="1.0" encoding="UTF-8"?>
     </CstmrCdtTrfInitn>
 </Document>`
 
-var BAD_XML_NBOFTXS_NOT_NUMBER string = `<?xml version="1.0" encoding="UTF-8"?>
+var P1_BAD_XML_NBOFTXS_NOT_NUMBER string = `<?xml version="1.0" encoding="UTF-8"?>
 <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
     <CstmrCdtTrfInitn>
         <GrpHdr>            
@@ -207,16 +208,16 @@ var BAD_XML_NBOFTXS_NOT_NUMBER string = `<?xml version="1.0" encoding="UTF-8"?>
 // TestHelloEmpty calls greetings.Hello with an empty string,
 // checking for an error.
 func TestDocumentGood(t *testing.T) {
-	doc := &schema.Pain001Document{}
+	doc := &pain_001_001_03.Document{}
 
-	err := xml.Unmarshal([]byte(GOOD_XML), doc)
+	err := xml.Unmarshal([]byte(P1_GOOD_XML), doc)
 	if err != nil {
 		t.Fatalf(`Failed to parse GOOD_XML %v error`, err)
 	}
 }
 
 func TestDocumentNotXml(t *testing.T) {
-	doc := &schema.Pain001Document{}
+	doc := &pacs_008_001_02.Document{}
 
 	err := xml.Unmarshal([]byte("not xml"), doc)
 	if err == nil {
@@ -225,9 +226,9 @@ func TestDocumentNotXml(t *testing.T) {
 }
 
 func TestDocumentHasMsgId(t *testing.T) {
-	doc := &schema.Pain001Document{}
+	doc := &pain_001_001_03.Document{}
 
-	err := xml.Unmarshal([]byte(GOOD_XML), doc)
+	err := xml.Unmarshal([]byte(P1_GOOD_XML), doc)
 	if err != nil {
 		t.Fatalf(`Failed to parse GOOD_XML %v error`, err)
 	}
@@ -256,17 +257,17 @@ func TestPain001Schema(t *testing.T) {
 	}{
 		{
 			desc:    "Good Xml",
-			content: GOOD_XML,
+			content: P1_GOOD_XML,
 			pass:    true,
 		},
 		{
 			desc:    "Bad Xml Missing Msg Id",
-			content: BAD_XML_MISSING_MSGID,
+			content: P1_BAD_XML_MISSING_MSGID,
 			pass:    false,
 		},
 		{
 			desc:    "Bad Xml NbOfTxs not number",
-			content: BAD_XML_NBOFTXS_NOT_NUMBER,
+			content: P1_BAD_XML_NBOFTXS_NOT_NUMBER,
 			pass:    false,
 		},
 	}
@@ -387,7 +388,7 @@ func Test(t *testing.T) {
   </FIToFICstmrCdtTrf>
 </Document>`
 
-	p8 := &schema.Pacs008Document{}
+	p8 := &pacs_008_001_02.Document{}
 	xml.Unmarshal([]byte(data), p8)
 
 	output, err := xml.Marshal(p8)

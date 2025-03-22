@@ -2,8 +2,8 @@
 
 package pacs_008_001_02
 
-// Document ...
-type Document *Document
+// DocumentElement ...
+type DocumentElement *Document
 
 // AccountIdentification4Choice ...
 type AccountIdentification4Choice struct {
@@ -211,6 +211,11 @@ type DateAndPlaceOfBirth struct {
 
 // DecimalNumber ...
 type DecimalNumber float64
+
+// Document ...
+type Document struct {
+	FIToFICstmrCdtTrf *FIToFICustomerCreditTransferV02 `xml:"FIToFICstmrCdtTrf"`
+}
 
 // DocumentAdjustment1 ...
 type DocumentAdjustment1 struct {
