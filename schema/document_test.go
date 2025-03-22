@@ -2,6 +2,7 @@ package schema_test
 
 import (
 	"encoding/xml"
+	"log/slog"
 	"strings"
 	"testing"
 
@@ -296,5 +297,105 @@ func TestEmpty(t *testing.T) {
 	str := string(data)
 
 	assert.False(t, strings.Contains(str, "Cd"))
+
+}
+
+func Test(t *testing.T) {
+
+	data := `<Document>
+  <FIToFICstmrCdtTrf>
+    <GrpHdr>
+      <MsgId>SCTORD156820211213000000012649</MsgId>
+      <CreDtTm>2025-322-36T36:2240:69</CreDtTm>
+      <BtchBookg>false</BtchBookg>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>11</CtrlSum>
+      <TtlIntrBkSttlmAmt Ccy="EUR">11</TtlIntrBkSttlmAmt>
+      <IntrBkSttlmDt></IntrBkSttlmDt>
+      <SttlmInf>
+        <SttlmMtd>CLRG</SttlmMtd>
+        <ClrSys>
+          <Prtry>ST2</Prtry>
+        </ClrSys>
+      </SttlmInf>
+      <InstgAgt>
+        <FinInstnId>
+          <BIC>BTRLRO22</BIC>
+          <Nm></Nm>
+        </FinInstnId>
+      </InstgAgt>
+      <InstdAgt>
+        <FinInstnId>
+          <BIC>BTRLRO22</BIC>
+          <Nm></Nm>
+        </FinInstnId>
+      </InstdAgt>
+    </GrpHdr>
+    <CdtTrfTxInf>
+      <PmtId>
+        <InstrId></InstrId>
+        <EndToEndId>E2EID-2</EndToEndId>
+        <TxId></TxId>
+        <ClrSysRef></ClrSysRef>
+      </PmtId>
+      <PmtTpInf>
+        <InstrPrty></InstrPrty>
+        <ClrChanl></ClrChanl>
+      </PmtTpInf>
+      <IntrBkSttlmAmt Ccy="EUR">11</IntrBkSttlmAmt>
+      <IntrBkSttlmDt>2025-01-10</IntrBkSttlmDt>
+      <SttlmPrty></SttlmPrty>
+      <AccptncDtTm></AccptncDtTm>
+      <PoolgAdjstmntDt></PoolgAdjstmntDt>
+      <XchgRate>0</XchgRate>
+      <ChrgBr>CRED</ChrgBr>
+      <Dbtr>
+        <Nm>Mr. Debtor</Nm>
+        <CtryOfRes></CtryOfRes>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>IE30BOFI90909012345678</IBAN>
+        </Id>
+        <Ccy></Ccy>
+        <Nm></Nm>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId>
+          <BIC>BOFIIE2D</BIC>
+          <Nm></Nm>
+        </FinInstnId>
+      </DbtrAgt>
+      <CdtrAgt>
+        <FinInstnId>
+          <BIC>BOFIIE2D</BIC>
+          <Nm></Nm>
+        </FinInstnId>
+      </CdtrAgt>
+      <Cdtr>
+        <Nm>Mr. Cdtr</Nm>
+        <CtryOfRes></CtryOfRes>
+      </Cdtr>
+      <CdtrAcct>
+        <Id>
+          <IBAN>IE16BOFI90909187654321</IBAN>
+        </Id>
+        <Ccy></Ccy>
+        <Nm></Nm>
+      </CdtrAcct>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>`
+
+	p8 := &schema.Pacs008Document{}
+	xml.Unmarshal([]byte(data), p8)
+
+	output, err := xml.Marshal(p8)
+
+	assert.NoError(t, err)
+
+	assert.False(t, strings.Contains(string(output), "<Ccy></Ccy>"))
+
+	slog.Info("test", "output", output)
 
 }
